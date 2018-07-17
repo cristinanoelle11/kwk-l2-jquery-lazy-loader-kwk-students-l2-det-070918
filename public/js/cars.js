@@ -8,6 +8,14 @@ function formatCars(carsJSON) {
   // refer to app/views/index.erb lines 16 - 22 for an example of how
   // to format three cars, each in a div with a class "col-md-4", in a 
   // div with a class "row"
+  var html = "<div class=\"row\">";
+  $.each(cars, function(index, car) {
+    html += "<div class=\"col-md-4 car\">";
+    html += "<h2>" + car.Make + "</h2>";
+    html += "<p><strong>Model:</strong> " + car.Model + "</p>";
+    html += "<p><strong>Year:</strong> " + car.Year + "</p>";
+    html += "</div>";
+  });
 }
 
 function addCarsToDOM(carsJSON) {
